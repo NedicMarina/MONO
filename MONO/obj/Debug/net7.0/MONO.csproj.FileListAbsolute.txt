@@ -1,0 +1,15 @@
+C:\Users\PC\source\repos\MONO\MONO\bin\Debug\net7.0\MONO.exe
+C:\Users\PC\source\repos\MONO\MONO\bin\Debug\net7.0\MONO.deps.json
+C:\Users\PC\source\repos\MONO\MONO\bin\Debug\net7.0\MONO.runtimeconfig.json
+C:\Users\PC\source\repos\MONO\MONO\bin\Debug\net7.0\MONO.dll
+C:\Users\PC\source\repos\MONO\MONO\bin\Debug\net7.0\MONO.pdb
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.AssemblyInfo.cs
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.dll
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\refint\MONO.dll
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.pdb
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\MONO.genruntimeconfig.cache
+C:\Users\PC\source\repos\MONO\MONO\obj\Debug\net7.0\ref\MONO.dll
