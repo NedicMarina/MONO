@@ -34,3 +34,4 @@ C:\Users\PC\source\repos\Store\Store.WebApi\obj\Debug\net8.0\rjsmcshtml.dswa.cac
 C:\Users\PC\source\repos\Store\Store.WebApi\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\PC\source\repos\Store\Store.WebApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\PC\source\repos\Store\Store.WebApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\PC\source\repos\Store\Store.WebApi\obj\Debug\net8.0\Store.WebApi.sourcelink.json

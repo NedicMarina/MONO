@@ -16,7 +16,7 @@ namespace Store.WebApi.Controllers
                 Species = "Lion",
                 Name = "Simba",
                 Age = 5,
-                FoodType = "Meat"
+                FoodId = 1
             },
             new Animal
             {
@@ -24,29 +24,45 @@ namespace Store.WebApi.Controllers
                 Species = "Elephant",
                 Name = "Dumbo",
                 Age = 10,
-                FoodType = "Grass"
+                FoodId = 2
             }
         };
 
-        [HttpGet(Name = "GetAnimal")]
-        public IEnumerable<Animal> GetAnimals()
+        [HttpGet]
+        public IActionResult GetAllAnimals(
+            string species="",
+            string name = "",
+            int minAge = 0)
         {
+            IEnumerable<Animal> query = animals;
 
+            query = query.Where(animal =>
+                animal.Species.Contains(species));
 
-            return animals;
+            query = query.Where(animal =>
+                animal.Name.Contains(name));
+
+            query = query.Where(animal =>
+                animal.Age >= minAge);
+
+            return Ok(query.ToList());
         }
 
         [HttpGet("{id}")]
-        public Animal GetAnimalById(int id)
+        public IActionResult GetAnimalById(int id)
         {
             Animal animal = animals.FirstOrDefault(animal => animal.Id == id);
 
-            return animal;
+            if (animal == null)
+            {
+                return NotFound("Animal with this ID does not exist.");
+            }
+
+            return Ok(animal);
         }
 
-
         [HttpPost]
-        public Animal CreateAnimal(Animal animal)
+        public IActionResult CreateAnimal(Animal animal)
         {
             int newId = animals.Max(animal => animal.Id) + 1;
 
@@ -54,40 +70,41 @@ namespace Store.WebApi.Controllers
 
             animals.Add(animal);
 
-            return animal;
+            return Ok("Animal added.");
         }
 
         [HttpPut("{id}")]
-        public Animal UpdateAnimal(int id, Animal updatedAnimal)
+        public IActionResult UpdateAnimal(int id, Animal updatedAnimal)
         {
             Animal animal = animals.FirstOrDefault(animal => animal.Id == id);
 
             if (animal == null)
             {
-                return null;
+                return NotFound("Animal with this ID does not exist.");
             }
 
             animal.Species = updatedAnimal.Species;
             animal.Name = updatedAnimal.Name;
             animal.Age = updatedAnimal.Age;
-            animal.FoodType = updatedAnimal.FoodType;
+            animal.FoodId = updatedAnimal.FoodId;
 
-            return animal;
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
-        public Animal DeleteAnimal(int id)
+        public IActionResult DeleteAnimal(int id)
         {
             Animal animal = animals.FirstOrDefault(animal => animal.Id == id);
 
             if (animal == null)
             {
-                return null;
+                return NotFound("Animal with this ID does not exist.");
             }
 
             animals.Remove(animal);
 
-            return animal;
+            return NoContent();
         }
     }
 }
+

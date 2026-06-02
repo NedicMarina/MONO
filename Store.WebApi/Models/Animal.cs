@@ -6,10 +6,10 @@
 
         public string Species { get; set; }
 
-        public string Name { get; set; }
+        public string Name { get; set; } = "NoName";
 
-        public int Age { get; set; }
+        public int Age { get; set; } = 0;
 
-        public string FoodType { get; set; }
+        public int FoodId { get; set; } 
     }
 }
