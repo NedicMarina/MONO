@@ -1,0 +1,9 @@
+SELECT
+    "ArtPiece"."Title",
+    COUNT("Ticket"."Id") AS "SoldTickets"
+FROM "ArtPiece"
+LEFT JOIN "Performance"
+    ON "ArtPiece"."Id" = "Performance"."ArtPieceId"
+LEFT JOIN "Ticket"
+    ON "Performance"."Id" = "Ticket"."PerformanceId"
+GROUP BY "ArtPiece"."Title";

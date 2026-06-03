@@ -1,0 +1,66 @@
+CREATE TABLE "Theater" (
+    "Id" INT PRIMARY KEY,
+    "Adress" VARCHAR(100),
+    "Title" VARCHAR(100),
+    "WorkingHours" VARCHAR(50)
+);
+
+
+CREATE TABLE "Seat" (
+    "Id" INT PRIMARY KEY,
+    "No" INT NOT NULL,
+    "Category" VARCHAR(50),
+    "TheaterId" INT NOT NULL,
+    FOREIGN KEY ("TheaterId") REFERENCES "Theater"("Id")
+);
+
+CREATE TABLE "AudienceMember" (
+    "Id" INT PRIMARY KEY,
+    "Name" VARCHAR(50),
+    "Surname" VARCHAR(50)
+);
+
+create table "ArtPiece"(
+	"Id" INT PRIMARY KEY,
+	"Genre" VARCHAR(50),
+	"Title" VARCHAR(100),
+	"Description" VARCHAR(500)
+);
+
+create table "Actor"(
+	"Id" INT primary key,
+	"Name" VARCHAR(50),
+    "Surname" VARCHAR(50),
+    "DateOfBirth" DATE,
+    "DateOfFirstWorkDay" DATE,
+    "Gender" VARCHAR(20)
+);
+
+create table "Performance" (
+	"Id" INT primary key,
+	"DateOfPerformance" DATE,
+	"TheaterId" INT NOT NULL,
+	"ArtPieceId" INT not null,
+	FOREIGN KEY ("TheaterId") REFERENCES "Theater"("Id"),
+	FOREIGN KEY ("ArtPieceId") REFERENCES "ArtPiece"("Id")
+);
+
+create table "ActorPerformance" (
+	"Id" INT primary key,
+	"ActorId" INT NOT NULL,
+	"PerformanceId" INT not null,
+	FOREIGN KEY ("ActorId") REFERENCES "Actor"("Id"),
+	FOREIGN KEY ("PerformanceId") REFERENCES "Performance"("Id")
+);
+
+CREATE TABLE "Ticket" (
+    "Id" INT PRIMARY KEY,
+    "Price" DECIMAL(10,2) NOT NULL,
+    "SeatId" INT NOT NULL,
+    "PerformanceId" INT NOT NULL,
+    "AudienceMemberId" INT not null,
+    FOREIGN KEY ("SeatId") REFERENCES "Seat"("Id"),
+    FOREIGN KEY ("PerformanceId") REFERENCES "Performance"("Id"),
+    FOREIGN KEY ("AudienceMemberId") REFERENCES "AudienceMember"("Id"),
+    UNIQUE ("SeatId", "PerformanceId")
+);

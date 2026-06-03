@@ -1,0 +1,11 @@
+SELECT
+    "Actor"."Name",
+    "Actor"."Surname",
+    "ArtPiece"."Title"
+FROM "Actor"
+RIGHT JOIN "ActorPerformance"
+    ON "Actor"."Id" = "ActorPerformance"."ActorId"
+RIGHT JOIN "Performance"
+    ON "ActorPerformance"."PerformanceId" = "Performance"."Id"
+RIGHT JOIN "ArtPiece"
+    ON "Performance"."ArtPieceId" = "ArtPiece"."Id";

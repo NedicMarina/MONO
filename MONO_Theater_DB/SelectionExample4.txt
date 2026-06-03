@@ -1,0 +1,7 @@
+SELECT
+    "AudienceMember"."Name",
+    "AudienceMember"."Surname",
+    "Ticket"."Id" AS "TicketId"
+FROM "AudienceMember"
+LEFT JOIN "Ticket"
+    ON "AudienceMember"."Id" = "Ticket"."AudienceMemberId";

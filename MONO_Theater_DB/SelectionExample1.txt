@@ -1,0 +1,11 @@
+select DISTINCT
+    "Actor"."Name",
+    "Actor"."Surname"
+FROM "Actor"
+JOIN "ActorPerformance"
+    ON "Actor"."Id" = "ActorPerformance"."ActorId"
+JOIN "Performance"
+    ON "ActorPerformance"."PerformanceId" = "Performance"."Id"
+JOIN "ArtPiece"
+    ON "Performance"."ArtPieceId" = "ArtPiece"."Id"
+WHERE "ArtPiece"."Title" = 'Hamlet';

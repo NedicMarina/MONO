@@ -1,0 +1,9 @@
+SELECT
+    "ArtPiece"."Title" ,
+    SUM("Ticket"."Price") AS "Revenue"
+FROM "Ticket"
+INNER JOIN "Performance"
+    ON "Ticket"."PerformanceId" = "Performance"."Id"
+INNER JOIN "ArtPiece"
+    ON "Performance"."ArtPieceId" = "ArtPiece"."Id"
+GROUP BY "ArtPiece"."Title";

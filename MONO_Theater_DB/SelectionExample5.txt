@@ -1,0 +1,9 @@
+SELECT
+    "ArtPiece"."Title",
+    "Performance"."DateOfPerformance"
+FROM "Performance"
+INNER JOIN "ArtPiece"
+    ON "Performance"."ArtPieceId" = "ArtPiece"."Id"
+INNER JOIN "Theater"
+    ON "Performance"."TheaterId" = "Theater"."Id"
+WHERE "Theater"."Title" = 'HNK Osijek';
