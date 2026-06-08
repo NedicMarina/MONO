@@ -21,16 +21,15 @@ namespace Store.WebApi.Controllers
       
 
         [HttpGet]
-        public IActionResult GetAllAnimals([FromQuery] AnimalFilter filter)
+        public async Task<IActionResult> GetAllAnimalsAsync([FromQuery] AnimalFilter filter)
         {
-
-            return Ok(animalService.GetAllAnimals(filter));
+            return Ok(await animalService.GetAllAnimalsAsync(filter));
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetAnimalById(int id)
+        public async Task<IActionResult> GetAnimalByIdAsync(int id)
         {
-            Animal animal = animalService.GetAnimalById(id);
+            Animal animal = await animalService.GetAnimalByIdAsync(id);
 
             if (animal == null)
             {
@@ -41,17 +40,17 @@ namespace Store.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateAnimal(Animal animal)
+        public async Task<IActionResult> CreateAnimalAsync(Animal animal)
         {
-            Animal createdAnimal = animalService.CreateAnimal(animal);
+            Animal createdAnimal = await animalService.CreateAnimalAsync(animal);
 
             return Ok(createdAnimal);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateAnimal(int id, Animal animal)
+        public async Task<IActionResult> UpdateAnimalAsync(int id, Animal animal)
         {
-            bool isUpdated = animalService.UpdateAnimal(id, animal);
+            bool isUpdated = await animalService.UpdateAnimalAsync(id, animal);
 
             if (!isUpdated)
             {
@@ -62,9 +61,9 @@ namespace Store.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteAnimal(int id)
+        public async Task<IActionResult> DeleteAnimalAsync(int id)
         {
-            bool isDeleted = animalService.DeleteAnimal(id);
+            bool isDeleted = await animalService.DeleteAnimalAsync(id);
 
             if (!isDeleted)
             {

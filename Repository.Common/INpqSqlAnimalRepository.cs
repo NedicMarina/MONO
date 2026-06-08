@@ -11,10 +11,10 @@ namespace Store.Repository.Common
     public interface INpgSqlAnimalRepository
     {
 
-        List<Animal> GetAllAnimals(AnimalFilter filter);
-        Animal GetAnimalById(int id);
-        Animal CreateAnimal(Animal animal);
-        bool UpdateAnimal(int id, Animal animal);
-        bool DeleteAnimal(int id);
+        Task<List<Animal>> GetAllAnimalsAsync(AnimalFilter filter);
+        Task<Animal> GetAnimalByIdAsync(int id);
+        Task<Animal> CreateAnimalAsync(Animal animal);
+        Task<bool> UpdateAnimalAsync(int id, Animal animal);
+        Task<bool> DeleteAnimalAsync(int id);
     }
 }

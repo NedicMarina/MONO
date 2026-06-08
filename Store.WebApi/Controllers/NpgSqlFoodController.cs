@@ -20,17 +20,17 @@ namespace Store.WebApi.Controllers
     
 
         [HttpGet]
-        public IActionResult GetAllFoods([FromQuery] FoodFilter filter)
+        public async Task<IActionResult> GetAllFoodsAsync([FromQuery] FoodFilter filter)
         {
-            List<Food> foods = foodService.GetAllFoods(filter);
+            List<Food> foods = await foodService.GetAllFoodsAsync(filter);
 
             return Ok(foods);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetFoodById(int id)
+        public async Task<IActionResult> GetFoodByIdAsync(int id)
         {
-            Food food = foodService.GetFoodById(id);
+            Food food = await foodService.GetFoodByIdAsync(id);
 
             if (food == null)
             {
@@ -41,17 +41,17 @@ namespace Store.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateFood(Food food)
+        public async Task<IActionResult> CreateFoodAsync(Food food)
         {
-            Food createdFood = foodService.CreateFood(food);
+            Food createdFood = await foodService.CreateFoodAsync(food);
 
             return Ok(createdFood);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateFood(int id, Food food)
+        public async Task<IActionResult> UpdateFoodAsync(int id, Food food)
         {
-            bool isUpdated = foodService.UpdateFood(id, food);
+            bool isUpdated = await foodService.UpdateFoodAsync(id, food);
 
             if (!isUpdated)
             {
@@ -62,9 +62,9 @@ namespace Store.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteFood(int id)
+        public async Task<IActionResult> DeleteFoodAsync(int id)
         {
-            bool isDeleted = foodService.DeleteFood(id);
+            bool isDeleted = await foodService.DeleteFoodAsync(id);
 
             if (!isDeleted)
             {
