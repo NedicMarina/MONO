@@ -1,17 +1,22 @@
 ﻿using Store.Model;
 using Store.Repository.Common;
 using Store.Service.Common;
-using Store.Repository;
 using Store.Common;
 using System.Threading.Tasks;
 
 namespace Store.Service
 {
-    public class NpgSqlFoodService : INpgSqlFoodService
+    public class FoodService : IFoodService
     {
-        private readonly NpgSqlFoodRepository foodRepository = new NpgSqlFoodRepository();
+        //private readonly FoodRepository foodRepository = new FoodRepository();
 
-      
+        private readonly IFoodRepository foodRepository;
+
+        public FoodService(IFoodRepository foodRepository)
+        {
+            this.foodRepository = foodRepository;
+        }
+
         public async Task<List<Food>> GetAllFoodsAsync(FoodFilter filter)
         {
             return await foodRepository.GetAllFoodsAsync(filter);

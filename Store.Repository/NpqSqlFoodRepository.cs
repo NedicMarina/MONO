@@ -8,7 +8,7 @@ using Store.Common;
 
 namespace Store.Repository
 {
-    public class NpgSqlFoodRepository : INpgSqlFoodRepository
+    public class FoodRepository : IFoodRepository
     {
         private readonly string connectionString =
             "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";

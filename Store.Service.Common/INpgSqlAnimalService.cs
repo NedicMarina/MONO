@@ -9,7 +9,7 @@ using Store.Common;
 
 namespace Store.Service.Common
 {
-    public interface INpgSqlAnimalService
+    public interface IAnimalService
     {
         Task<List<Animal>> GetAllAnimalsAsync(AnimalFilter filter);
         Task<Animal> GetAnimalByIdAsync(int id);

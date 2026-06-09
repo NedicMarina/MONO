@@ -13,11 +13,16 @@ namespace Store.WebApi.Controllers
     [ApiController]
     [Route("[controller]")]
 
-    public class NpgSqlFoodController : ControllerBase
+    public class FoodController : ControllerBase
     {
-        private readonly NpgSqlFoodService foodService = new NpgSqlFoodService();
+        private readonly IFoodService foodService;
 
-    
+        public FoodController(IFoodService foodService)
+        {
+            this.foodService = foodService;
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> GetAllFoodsAsync([FromQuery] FoodFilter filter)

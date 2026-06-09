@@ -4,7 +4,7 @@ using Store.Model;
 
 namespace Store.Repository.Common
 {
-    public interface INpgSqlFoodRepository
+    public interface IFoodRepository
     {
         Task<List<Food>> GetAllFoodsAsync(FoodFilter filter);
         Task<Food> GetFoodByIdAsync(int id);

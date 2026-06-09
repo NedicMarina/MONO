@@ -14,11 +14,16 @@ namespace Store.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class NpgSqlAnimalController : ControllerBase
+    public class AnimalController : ControllerBase
     {
-        private readonly NpgSqlAnimalService animalService = new NpgSqlAnimalService();
+        private readonly IAnimalService animalService;
 
-      
+        public AnimalController(IAnimalService animalService)
+        {
+            this.animalService = animalService;
+        }
+
+
 
         [HttpGet]
         public async Task<IActionResult> GetAllAnimalsAsync([FromQuery] AnimalFilter filter)

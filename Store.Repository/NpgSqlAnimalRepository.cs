@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Store.Common;
+using Store.Repository.Common;
 
 namespace Store.Repository
 {
-    public class NpgSqlAnimalRepository
+    public class AnimalRepository : IAnimalRepository
     {
         private readonly string connectionString =
             "Host=localhost;Port=5432;Database=postgres;Username=postgres;Password=postgres";

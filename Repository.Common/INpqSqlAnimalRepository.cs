@@ -8,7 +8,7 @@ using Store.Common;
 
 namespace Store.Repository.Common
 {
-    public interface INpgSqlAnimalRepository
+    public interface IAnimalRepository
     {
 
         Task<List<Animal>> GetAllAnimalsAsync(AnimalFilter filter);

@@ -9,11 +9,16 @@ using Store.Common;
 
 namespace Store.Service
 {
-    public class NpgSqlAnimalService : INpgSqlAnimalService
+    public class AnimalService : IAnimalService
     {
-        private readonly NpgSqlAnimalRepository animalRepository = new NpgSqlAnimalRepository();
+        // private readonly AnimalRepository animalRepository = new AnimalRepository();
 
-       
+        private readonly IAnimalRepository animalRepository;
+
+        public AnimalService(IAnimalRepository animalRepository)
+        {
+            this.animalRepository = animalRepository;
+        }
 
         public async Task<List<Animal>> GetAllAnimalsAsync(AnimalFilter filter)
         {
