@@ -5,9 +5,9 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.WebApi", "Store.WebApi\Store.WebApi.csproj", "{1D096C54-1C0B-4ABD-8B0E-590E3CD643D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Repository", "ZooRepository\Store.Repository.csproj", "{8D20EA2C-0D8D-441C-9C8D-39B189B56A0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Repos", "ZooRepository\Store.Repos.csproj", "{8D20EA2C-0D8D-441C-9C8D-39B189B56A0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Service", "ZooService\Store.Service.csproj", "{9EBE0B4E-1C72-4DF3-89F8-AB4116B544EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Serv", "ZooService\Store.Serv.csproj", "{9EBE0B4E-1C72-4DF3-89F8-AB4116B544EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Model", "Store.Model\Store.Model.csproj", "{7D097FEF-BC18-4B8D-B470-396350E88FF5}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Service.Common", "Store.Service.Common\Store.Service.Common.csproj", "{E62BDC32-6C46-4CEC-A980-A16D55E23E26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Common", "Store.Common\Store.Common.csproj", "{C5C03563-5BE2-4D6C-87F7-C873B30BD340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Repository", "Store.Repository\Store.Repository.csproj", "{8E304BBF-F748-4DCB-8A17-17F2381C203B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store.Service", "Store.Service\Store.Service.csproj", "{4E44D37F-75CC-443D-B88B-4B715C5D1F9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{C5C03563-5BE2-4D6C-87F7-C873B30BD340}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5C03563-5BE2-4D6C-87F7-C873B30BD340}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5C03563-5BE2-4D6C-87F7-C873B30BD340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E304BBF-F748-4DCB-8A17-17F2381C203B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E304BBF-F748-4DCB-8A17-17F2381C203B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E304BBF-F748-4DCB-8A17-17F2381C203B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E304BBF-F748-4DCB-8A17-17F2381C203B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E44D37F-75CC-443D-B88B-4B715C5D1F9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E44D37F-75CC-443D-B88B-4B715C5D1F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E44D37F-75CC-443D-B88B-4B715C5D1F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E44D37F-75CC-443D-B88B-4B715C5D1F9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

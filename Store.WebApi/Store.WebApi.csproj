@@ -15,8 +15,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Repository.Common\Store.Repository.Common.csproj" />
     <ProjectReference Include="..\Store.Service.Common\Store.Service.Common.csproj" />
-    <ProjectReference Include="..\ZooRepository\Store.Repository.csproj" />
-    <ProjectReference Include="..\ZooService\Store.Service.csproj" />
+
+
+	  <ProjectReference Include="..\Store.Service\Store.Service.csproj" />
+
   </ItemGroup>
 
 </Project>
