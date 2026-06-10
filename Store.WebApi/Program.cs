@@ -3,7 +3,10 @@ using Store.Repository.Common;
 using Store.Service;
 using Store.Service.Common;
 using Autofac;
-using Autofac.Extensions.DependencyInjection;   
+using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
+using Store.WebApi.RestModels;
+using Store.Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,6 +45,12 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var mapperConfig = new MapperConfiguration(cfg =>
+{
+    cfg.CreateMap<Animal, AnimalRest>().ReverseMap();
+    cfg.CreateMap<Food, FoodRest>().ReverseMap();
+});
 
 
 var app = builder.Build();
